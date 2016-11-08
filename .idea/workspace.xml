@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a32dd62-1c88-4e76-9e7a-912dd325b9a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-    </list>
+    <list default="true" id="2a32dd62-1c88-4e76-9e7a-912dd325b9a7" name="Default" comment="" />
     <ignored path="hello.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -139,12 +137,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478595179483</updated>
-      <workItem from="1478595182389" duration="590000" />
+      <workItem from="1478595182389" duration="921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="590000" />
+    <option name="totallyTimeSpent" value="921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="172" y="7" width="1540" height="1011" extended-state="0" />

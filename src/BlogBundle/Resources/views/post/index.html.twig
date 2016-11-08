@@ -1,8 +1,7 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'BlogBundle:Pages:layout.html.twig' %}
+{% block title %}Admin area{% endblock %}
 {% block body %}
-    <h1>Post list</h1>
-
+    <h1>Admin area</h1>
     <table>
         <thead>
             <tr>
@@ -16,17 +15,17 @@
         <tbody>
         {% for post in posts %}
             <tr>
-                <td><a href="{{ path('admin_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
+                <td><a href="{{ path('create_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.description }}</td>
                 <td>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_show', { 'id': post.id }) }}">show</a>
+                            <a href="{{ path('create_show', { 'id': post.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_edit', { 'id': post.id }) }}">edit</a>
+                            <a href="{{ path('create_edit', { 'id': post.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +36,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_new') }}">Create a new entry</a>
+            <a href="{{ path('create_new') }}">Add new post</a>
         </li>
+        <li>    <a href="{{ path('create_prod') }}">Production area</a></li>
     </ul>
 {% endblock %}

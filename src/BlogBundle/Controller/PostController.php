@@ -15,6 +15,36 @@ use BlogBundle\Form\PostType;
 class PostController extends Controller
 {
     /**
+     * All Post entities in production.
+     *
+     */
+    public function ProdAction()
+    {
+        $em = $this->getDoctrine();
+        $em = $em->getRepository('BlogBundle:Post');
+        $countBlog = $em->findAllBlogCont();
+       //var_dump($countBlog);
+        $posts = $em->findBlog(["page"=>1]);
+        return $this->render('BlogBundle:post:production.html.twig', array(
+            'posts' => $posts,
+        ));
+    }
+
+    /**
+     *  Show Post entity in production.
+     *
+     */
+    public function ShowPOstAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
+        $post = $repository->find($id);
+        return $this->render('BlogBundle:post:showpost.html.twig', array(
+            'post' => $post,
+        ));
+    }
+
+
+    /**
      * Lists all Post entities.
      *
      */
@@ -24,7 +54,7 @@ class PostController extends Controller
 
         $posts = $em->getRepository('BlogBundle:Post')->findAll();
 
-        return $this->render('post/index.html.twig', array(
+        return $this->render('BlogBundle:post:index.html.twig', array(
             'posts' => $posts,
         ));
     }
@@ -44,10 +74,10 @@ class PostController extends Controller
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('admin_show', array('id' => $post->getId()));
+            return $this->redirectToRoute('create_show', array('id' => $post->getId()));
         }
 
-        return $this->render('post/new.html.twig', array(
+        return $this->render('BlogBundle:post:new.html.twig', array(
             'post' => $post,
             'form' => $form->createView(),
         ));
@@ -61,7 +91,7 @@ class PostController extends Controller
     {
         $deleteForm = $this->createDeleteForm($post);
 
-        return $this->render('post/show.html.twig', array(
+        return $this->render('BlogBundle:post:show.html.twig', array(
             'post' => $post,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -82,10 +112,10 @@ class PostController extends Controller
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $post->getId()));
+            return $this->redirectToRoute('create_edit', array('id' => $post->getId()));
         }
 
-        return $this->render('post/edit.html.twig', array(
+        return $this->render('BlogBundle:post:edit.html.twig', array(
             'post' => $post,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -107,7 +137,7 @@ class PostController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('create_index');
     }
 
     /**
@@ -120,7 +150,7 @@ class PostController extends Controller
     private function createDeleteForm(Post $post)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $post->getId())))
+            ->setAction($this->generateUrl('create_delete', array('id' => $post->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

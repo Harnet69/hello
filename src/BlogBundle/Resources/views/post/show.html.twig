@@ -26,10 +26,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_index') }}">Back to the list</a>
+            <a href="{{ path('create_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('admin_edit', { 'id': post.id }) }}">Edit</a>
+            <a href="{{ path('create_edit', { 'id': post.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block main_menu %}
+        <ul>
+         <li><a href="{{ path('create_prod') }}">Главная</a></li>
+         <li><a href="{{ path('blog_about') }}">О нас</a></li>
+        </ul>
+    {% endblock %}
+    <h1>{% block page_title %}{% endblock %}</h1>
+    <p>{% block content %}{% endblock %}</p>
+{% endblock %}

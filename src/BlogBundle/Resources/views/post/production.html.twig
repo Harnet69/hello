@@ -1,0 +1,15 @@
+{% extends '::page.html.twig' %}
+     {% block site_title %}
+        <h1>The hornet's nest news</h1>
+     {% endblock %}
+     {% block main %}
+        {% for post in posts %}
+            <div class="main_post">
+                <h2><a href="{{ path('create_showPost', { 'id': post.id }) }}">{{ post.title|upper }}</a></h2>
+                <p id="post_date">{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
+                <p>{{ post.description|slice(0, 300) }}
+                <a id="main_post_next" href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>
+            </div>
+        {% endfor %}
+
+     {% endblock %}

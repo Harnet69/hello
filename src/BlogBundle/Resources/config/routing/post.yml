@@ -1,24 +1,24 @@
-admin_index:
+create_index:
     path:     /
     defaults: { _controller: "BlogBundle:Post:index" }
     methods:  GET
 
-admin_show:
+create_show:
     path:     /{id}/show
     defaults: { _controller: "BlogBundle:Post:show" }
     methods:  GET
 
-admin_new:
+create_new:
     path:     /new
     defaults: { _controller: "BlogBundle:Post:new" }
     methods:  [GET, POST]
 
-admin_edit:
+create_edit:
     path:     /{id}/edit
     defaults: { _controller: "BlogBundle:Post:edit" }
     methods:  [GET, POST]
 
-admin_delete:
+create_delete:
     path:     /{id}/delete
     defaults: { _controller: "BlogBundle:Post:delete" }
     methods:  DELETE

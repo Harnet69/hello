@@ -17,7 +17,7 @@ class PostType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('datetime', 'datetime')
+            ->add('datetime', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType')
         ;
     }
     

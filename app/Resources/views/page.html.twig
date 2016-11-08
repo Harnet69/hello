@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    {% block header %}
+        <div class="header">
+            <div class="logo-header">
+                {% block logo %}
+                    <div class="block block-logo">
+                            <a href="{{ path('create_prod') }}"><img src="{{asset("uploads/images/hornet_logo_sign.png") }}"></a>
+                    </div>
+                    <div class="block block-logo-rev">
+                        <a href="{{ path('create_prod') }}"><img src="{{asset("uploads/images/hornet_logo_rev.png") }}"></a>
+                    </div>
+                {% endblock %}
+                {% block main_menu %}
+                    <div class="main_menu" id="menu_main_menu">
+                        <ul>
+                            <li><a href="{{ path('create_prod') }}">Main</a></li>
+                            <li><a href="{{ path('blog_about') }}">About me</a></li>
+                            <li><a href="{{ path('create_index') }}">Admin area</a></li>
+                        </ul>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+        <div class="main_container">
+            {% block site_title %}
+                <div class="page title" id="page_title">
+                    <h1>{% block page_title %}Page title{% endblock %}</h1>
+                </div>
+            {% endblock %}
+            <main>
+                {% block main %}
+                    Чтота
+                {% endblock %}
+            </main>
+        </div>
+    {% endblock %}
+
+    {% block futer %}
+        <footer role="contentinfo">
+            <div class="block block-copyright">
+                Produced by Harnet 2016. All right reserved.
+            </div>
+        </footer>
+    {% endblock %}
+{% endblock %}

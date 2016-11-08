@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="700470b4-aad7-4a63-af28-4ddfe5385f9f" name="harnet.ru" url="http://188.166.0.102">
+        <fileTransfer host="188.166.0.102" port="22" privateKey="C:\Users\Vital\.ssh\id_rsa" rootFolder="/home/harnet/public_html/www/shared/web/uploads" accessType="SFTP" username="root" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

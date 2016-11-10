@@ -561,7 +561,7 @@ h2 a:hover {
 .header .logo-header .main_menu ul li a {
   text-decoration: none;
   color: #1E1718;
-  background-image: url("/web/uploads/images/bkg_op_btn.png");
+  background-image: url("/uploads/images/bkg_op_btn.png");
   padding: 2px 5px;
   border: 1px solid #F7B800;
   border-radius: 7px;
@@ -571,7 +571,7 @@ h2 a:hover {
 }
 /* line 35, ../../../sass/include/_header.scss */
 .header .logo-header .main_menu ul li a:hover {
-  background-image: url("/web/uploads/images/bkg_op_btn_push.png");
+  background-image: url("/uploads/images/bkg_op_btn_push.png");
 }
 
 /* line 1, ../../../sass/include/_footer.scss */
@@ -586,7 +586,7 @@ footer {
 
 /* line 1, ../../../sass/include/_main.scss */
 .main_container {
-  background-image: url("/web/uploads/images/bkg_op.png");
+  background-image: url("/uploads/images/bkg_op.png");
   width: 960px;
   margin: 30px auto;
 }

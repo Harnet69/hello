@@ -12,4 +12,14 @@
       color: #ff8300;
     }
   }
+  .main_pagination{
+    color: violet;
+    text-align: center;
+    ul{
+      list-style: none;
+      li{
+        display: inline;
+      }
+    }
+  }
 }

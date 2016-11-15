@@ -21,8 +21,11 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     public function findBlog(array $context = []){
         $query = $this->createQueryBuilder("b");
         $query->select("b");
-        $query->setMaxResults(5);
+        /*Max quantity news on page*/
+        $query->setMaxResults(3);
+        /*Reverse posts*/
         $query->orderBy("b.id", "DESC");
+        /*Number page to output*/
         $page = 0;
         if(isset($context["page"]) && is_numeric($context["page"]) && $context["page"]>1){
             $page = 3 * ($context["page"]-1);

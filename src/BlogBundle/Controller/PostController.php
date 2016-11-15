@@ -15,18 +15,27 @@ use BlogBundle\Form\PostType;
 class PostController extends Controller
 {
     /**
-     * All Post entities in production.
+     * Show all Post entities in production.
      *
      */
-    public function ProdAction()
+    public function ProdAction(Request $request)
     {
         $em = $this->getDoctrine();
         $em = $em->getRepository('BlogBundle:Post');
+    /*Quantity all posts*/
         $countBlog = $em->findAllBlogCont();
-       //var_dump($countBlog);
-        $posts = $em->findBlog(["page"=>1]);
+    /*Number of output page*/
+        $page = $request->query->get("page")&&  $request->query->get("page") > 1 ? $request->query->get("page") : 1;
+        $posts = $em->findBlog(["page"=>$page]);
+        $pagination = [
+            "total" => array_shift($countBlog),
+            "page" => $page,
+            'max_result' => 3,
+            'url' => "create_prod",
+        ];
         return $this->render('BlogBundle:post:production.html.twig', array(
             'posts' => $posts,
+            'pagination' => $pagination,
         ));
     }
 

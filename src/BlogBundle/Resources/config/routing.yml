@@ -1,6 +1,7 @@
 admin_blog:
     resource: "@BlogBundle/Resources/config/routing/post.yml"
     prefix:   /admin
+
 create_prod:
     path:     /
     defaults: { _controller: "BlogBundle:Post:Prod" }

@@ -5,11 +5,22 @@
      {% block main %}
         {% for post in posts %}
             <div class="main_post">
-                <h2><a href="{{ path('create_showPost', { 'id': post.id }) }}">{{ post.title|upper }}</a></h2>
+                <h2><a href="{{ path('create_showPost', { 'id': post.id }) }}">{{ post.title }}</a></h2>
                 <p id="post_date">{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
                 <p>{{ post.description|slice(0, 300) }}
                 <a id="main_post_next" href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>
             </div>
         {% endfor %}
-
+            <div class="main_pagination">
+                <ul>
+                    {#Don't show "prev" on the first page#}
+                    {% if pagination.page >1 %}<li><a href="{{ path('create_prod', { 'page' : pagination.page -1})}}">Prev</a></li> {% endif %}
+                    <li>{{ pagination.page }}</li>
+                    {#Don't show "next" on the last page#}
+                    {% if pagination.page * pagination.max_result < pagination.total %}
+                        <li><a href="{{ path('create_prod', { 'page' : pagination.page +1})}}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
      {% endblock %}

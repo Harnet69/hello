@@ -15,8 +15,8 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('description')
+            ->add('title', NULL, ['required' => false])/*not add 'required' into input field*/
+            ->add('description', NULL, ['required' => false])/*not add 'required' into input field*/
             ->add('datetime', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType')
         ;
     }

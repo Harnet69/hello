@@ -3,6 +3,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -23,21 +24,23 @@ class Post
 
     /**
      * @var string
-     *
+     * /Add rule 'notBlank' into input field/
+     * @Assert\NotBlank()
      * @ORM\Column(name="title", type="string", length=150)
      */
     private $title;
 
     /**
      * @var string
-     *
+     * /Add rule 'notBlank' into input field/
+     * @Assert\NotBlank()
      * @ORM\Column(name="description", type="text")
      */
     private $description;
 
     /**
      * @var \DateTime
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="datetime", type="datetime")
      */
     private $datetime;

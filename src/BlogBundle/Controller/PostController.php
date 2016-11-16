@@ -24,7 +24,7 @@ class PostController extends Controller
         $em = $em->getRepository('BlogBundle:Post');
     /*Quantity all posts*/
         $countBlog = $em->findAllBlogCont();
-    /*Number of output page*/
+    /*Number of output page. If isset get parameter in URL - add into him "page"*/
         $page = $request->query->get("page")&&  $request->query->get("page") > 1 ? $request->query->get("page") : 1;
         $posts = $em->findBlog(["page"=>$page]);
         $pagination = [

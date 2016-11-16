@@ -1,5 +1,5 @@
 set :application, "harnet"
-set :domain,      "188.166.0.102"
+set :domain,      "128.199.55.153"
 set  :user,       "root"
 set  :use_sudo,   true
 default_run_options[:pty] = true

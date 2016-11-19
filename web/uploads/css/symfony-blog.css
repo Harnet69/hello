@@ -603,17 +603,18 @@ footer {
 .main_container .main_post #main_post_next {
   color: #ff8300;
 }
-/* line 15, ../../../sass/include/_main.scss */
-.main_container .main_pagination {
+
+/* line 17, ../../../sass/include/_main.scss */
+.main_pagination {
   color: mediumvioletred;
   text-align: center;
 }
-/* line 18, ../../../sass/include/_main.scss */
-.main_container .main_pagination ul {
+/* line 20, ../../../sass/include/_main.scss */
+.main_pagination ul {
   list-style: none;
 }
-/* line 20, ../../../sass/include/_main.scss */
-.main_container .main_pagination ul li {
+/* line 22, ../../../sass/include/_main.scss */
+.main_pagination ul li {
   display: inline;
 }
 

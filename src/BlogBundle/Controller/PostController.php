@@ -57,14 +57,28 @@ class PostController extends Controller
      * Lists all Post entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $posts = $em->getRepository('BlogBundle:Post')->findAll();
+        /*Output all blogs per page*/
+        //$posts = $em->getRepository('BlogBundle:Post')->findAll();
+        /*Quantity all posts*/
+        $countBlog = $em->getRepository('BlogBundle:Post')->findAllBlogCont();
+        $em = $em->getRepository('BlogBundle:Post');
+        //var_dump(array_shift($countBlog));
+        /*Number of output page. If isset get parameter in URL - add into him "page"*/
+        $page = $request->query->get("page")&&  $request->query->get("page") > 1 ? $request->query->get("page") : 1;
+        $posts = $em->findBlog(["page"=>$page]);
+        $pagination = [
+            "total" => array_shift($countBlog),
+            "page" => $page,
+            'max_result' => 3,
+            'url' => "create_prod",
+        ];
 
         return $this->render('BlogBundle:post:index.html.twig', array(
             'posts' => $posts,
+            'pagination' => $pagination
         ));
     }
 

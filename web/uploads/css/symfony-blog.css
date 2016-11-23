@@ -525,6 +525,12 @@ h2 a:hover {
   color: #ff8300;
 }
 
+/* line 25, ../../../sass/include/_typografy.scss */
+li, li a {
+  text-decoration: none;
+  list-style: none;
+}
+
 /* line 1, ../../../sass/include/_header.scss */
 .header {
   background-color: #bddad8;
@@ -604,18 +610,24 @@ footer {
   color: #ff8300;
 }
 
-/* line 17, ../../../sass/include/_main.scss */
+/* line 16, ../../../sass/include/_main.scss */
 .main_pagination {
   color: mediumvioletred;
   text-align: center;
 }
-/* line 20, ../../../sass/include/_main.scss */
+/* line 19, ../../../sass/include/_main.scss */
 .main_pagination ul {
   list-style: none;
 }
-/* line 22, ../../../sass/include/_main.scss */
+/* line 21, ../../../sass/include/_main.scss */
 .main_pagination ul li {
   display: inline;
+  padding: 0 3px;
+}
+/* line 25, ../../../sass/include/_main.scss */
+.main_pagination ul #current_page {
+  font-weight: bold;
+  color: red;
 }
 
 /* line 1, ../../../sass/include/_form.scss */

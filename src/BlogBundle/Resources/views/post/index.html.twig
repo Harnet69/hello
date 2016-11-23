@@ -16,8 +16,8 @@
         {% for post in posts %}
             <tr>
                 <td><a href="{{ path('create_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.description }}</td>
+                <td>{{ post.title | raw }}</td>
+                <td>{{ post.description | raw }}</td>
                 <td>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
@@ -37,7 +37,7 @@
         <ul>
             {#Don't show "prev" on the first page#}
             {% if pagination.page >1 %}<li><a href="{{ path('create_index', { 'page' : pagination.page -1})}}">Prev</a></li> {% endif %}
-            <li>{{ pagination.page }}</li>
+            <li id="current_page">{{ pagination.page }}</li>
             {#Don't show "next" on the last page#}
             {% if pagination.page * pagination.max_result < pagination.total %}
                 <li><a href="{{ path('create_index', { 'page' : pagination.page +1})}}">Next</a>

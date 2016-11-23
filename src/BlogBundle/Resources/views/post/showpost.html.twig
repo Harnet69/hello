@@ -1,8 +1,8 @@
 {% extends '::page.html.twig' %}
      {% block site_title %}
-         <h2>{{ post.title|upper }}</h2>
+         <h2>{{ post.title|upper | raw }}</h2>
      {% endblock %}
      {% block main %}
-              <p>{{ post.description }}</p>
+              <p>{{ post.description | raw }}</p>
              <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
      {% endblock %}

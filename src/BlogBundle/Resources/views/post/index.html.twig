@@ -17,7 +17,7 @@
             <tr>
                 <td><a href="{{ path('create_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
                 <td>{{ post.title | raw }}</td>
-                <td>{{ post.description | raw }}</td>
+                <td>{{ post.description | slice(0, 800) | raw }}</td>
                 <td>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
